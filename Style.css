@@ -53,7 +53,6 @@ justify-content:flex-end; /*pushes content to the end*/
     top:20px;
     z-index:1000px;
 
-  
 
 }
 .hero-section{
@@ -106,6 +105,11 @@ left;1000px;
 body.contact{
     background-color: #C094E4;
 }
+
+.contact h1{
+  position:relative;
+  left:500px;
+}
 .contact a{
     text-decoration: none;
 
@@ -118,89 +122,74 @@ color: black;
 
 }
 
-
-
-
- .contact img {
-  border: 5px solid #979494 ;
-  border-radius: 50%;
-  object-fit:cover ;
-  width: 100px ;
-  height: 100px ;
-  position: 100;
- }  
-.contact-container {
-      display: flex;
-      justify-content: center;
-      gap:0;
-      padding: 50px;
-      /*height: auto;*/
-      width: 100%;
-      align-items:flex-start;
-      flex-direction: row;
-    }
-
-    .left-div{
-      background-color: #f5f5f5;;
-      padding: 20px;
-      border-radius: 0px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      
-      height: 40%;
-      flex: 1 1 0%; 
-      margin-bottom:15px;
-      border-right: 1px solid #6d6464;
-      
+ body.contact{
+  overflow-x: hidden;
+ }
+ .contact-container{
+  background-color: #d9d9d9;
+  width: 700px;
+  height: 350px; 
+  display: flex;
+  margin-left: 340px
+  margin-top: 90px;
+  align-items: stretch;
+  position: fixed;
+  left: 300px;
+  
+  
+ }
+.spaced-text{
+  margin-bottom: 20px;
+  margin-left: 50px;
 }
- 
-.right-div{
-      background-color: #f5f5f5;;
-      padding: 20px;
-      border-radius: 0px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      width: 40%;
-      
-      flex: 1 1 0%;
-      margin-top:0.6px;
-      padding-bottom: 0;
-    
-     
- }
+.linkedIn-logo{
+  width:50px;
+  height:auto;
+  
+}
+.contact-container a{
+  margin-left:50px;
+  color: #736E6E;
+  display: flex;
+  align-items: stretch;
 
- .right-div, .left-div{
-  width: 300px; !important
- }
- #message {
-    width: 100%;   
-    height: 150px;   /* taller message box */
-    padding: 10px;
-    font-size: 1rem;
-    resize: vertical; /* allows user to resize vertically only */
- }
-
-.contact h1{
-  position:relative;
-  left:500px;
+}
+.left-div, .right-div {
+  flex: 1;
+  padding: 10px;
 }
 
+.divider {
+  height: auto;
+  width: 2px;
+  background-color: #736E6E;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#Message{
+height: 70px;
+width: auto;
+
+}
+.right-div form{
+  margin-top: 20px;
+ /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* subtle shadow */ */
+}
+}
 .about h1{
   position:absolute;
   left: 500px;
 }
 
-
-
-  .about img {
+ .profile-picture{
+  border: 5px solid #979494 ;
   border-radius: 50%;
-  border: 4px solid #fff;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-}
-
-
-
+  object-fit:cover ;
+  width: 100px ;
+  height: 100px ;
+  position: 100
+ }
 .about p {
   line-height: 1.6;
   margin-bottom: 1rem;
@@ -251,13 +240,14 @@ background-color: rgb(241, 191, 199);
   font-size: 0.9rem;
   cursor:pointer;
 }
-
- .projects img {
-  border: 5px solid #C094E4 ;
-  border-radius: 50%;
-  object-fit:cover ;
-  width: 100px ;
-  height: 100px ;
-  position: 100;
- }
- 
+.submit-button{
+  position: relative;
+  margin-top: 50px;
+  border-radius: 20px;
+  width: 100px;
+  background-color: #9a9595;
+  padding: 0.4rem 0.8rem;
+  margin-left: 50px;
+  font-size: 0.9rem;
+  cursor:pointer;
+}
