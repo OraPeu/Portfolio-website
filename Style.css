@@ -134,14 +134,14 @@ background-color:#FCAAB6;
  }
 
 body.contact{
-    background-color: #C094E4;
+   /* background-color: #C094E4;*/
       overflow-x: hidden;
+      background: linear-gradient(to bottom, #dea8e9, #eeaedb);
  }
-}
 
 .contact h1{
-  position:relative;
-  left:500px;
+  text-align: center;
+  margin-top: -40px;
 }
 .contact a{
     text-decoration: none;
@@ -152,19 +152,25 @@ body.contact{
 list-style-type: none;
 color: black;
 }
- .contact-container{
+.contact-container {
   background-color: #d9d9d9;
-  width: 700px;
+  width: 650px;
   height: 350px; 
   display: flex;
-  margin-left: 340px
-  margin-top: 90px;
-  align-items: stretch;
+  justify-content: center; /* centers content horizontally */
+  align-items: center;     /* centers content vertically */
+  
+  /* Center the div itself on screen */
   position: fixed;
-  left: 300px;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid #d46ba3;
   
-  
- }
+
+}
+
+
 .spaced-text{
   margin-bottom: 20px;
   margin-left: 50px;
@@ -179,39 +185,51 @@ color: black;
   color: #736E6E;
   display: flex;
   align-items: stretch;
+  font-family:'Poppins', sans-serif;
 
 }
 .contact-info, .contact-form {
   flex: 1;
   padding: 10px;
 }
-
 .contact-split {
-  height: auto;
-  width: 2px;
-  background-color: #736E6E;
-  margin-top: 20px;
-  margin-bottom: 20px;
+    height: 80%; /* Adjust as needed */
+    width: 2px;
+    background-color: #d46ba3;
+    margin: 0 20px; /* Adds space on both sides */
+    align-self: center; /* Ensures it's centered vertically */
 }
 
+#fname,#email, #phone{
+height:30px ;
+width: 200px;
+margin-left: -20px;
+}
 #Message{
-height: 70px;
-width: auto;
-
+height: 80px;
+width: 200px;
+margin-left: -20px;
 }
 .contact-form form{
   margin-top: 20px;
+  margin-left: 50px;
+  
+}
+.placeholder {
+  color: #999;       /* light gray text */
+  font-style: italic; /* optional */
 }
  
 .submit-button{
   position: relative;
-  margin-top: 50px;
+  margin-top: 20px;
   border-radius: 20px;
   border-style: none;
-  width: 100px;
-  background-color: #9a9595;
+  width: 90px;
+  height: auto;
+  background-color: #d46ba3;
   padding: 0.4rem 0.8rem;
-  margin-left: 50px;
+  margin-left: 40px;
   font-size: 0.9rem;
   cursor:pointer;
 }
@@ -236,8 +254,8 @@ width: auto;
 .about-text {
   display: flex;
   flex-direction: column;         /* Stack text and skills */
-  gap: 15px;                       /* Space between elements */
-  text-align: center;              /* Center text */
+  gap: 15px;                       
+  text-align: center;              
   max-width: 700px;
 }
 .about h1{
