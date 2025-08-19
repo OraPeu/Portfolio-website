@@ -199,13 +199,12 @@ color: black;
     margin: 0 20px; /* Adds space on both sides */
     align-self: center; /* Ensures it's centered vertically */
 }
-
-#fname,#email, #phone{
+.user-name, .user-email, .user-phone{
 height:30px ;
 width: 200px;
 margin-left: -20px;
 }
-#Message{
+.message{
 height: 80px;
 width: 200px;
 margin-left: -20px;
@@ -216,13 +215,13 @@ margin-left: -20px;
   
 }
 .placeholder {
-  color: #999;       /* light gray text */
-  font-style: italic; /* optional */
+  color: #999;    
+  font-style: italic; 
 }
  
 .submit-button{
   position: relative;
-  margin-top: 20px;
+  margin-top: 5px;
   border-radius: 20px;
   border-style: none;
   width: 90px;
@@ -232,6 +231,7 @@ margin-left: -20px;
   margin-left: 40px;
   font-size: 0.9rem;
   cursor:pointer;
+  color: #ffffff;
 }
 .about-section {
   display: flex;
