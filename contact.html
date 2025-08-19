@@ -1,60 +1,92 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
-    <head>
-<link href="Style.css"  rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <head>
+    <link href="Style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  </head>
 
-    </head>
-    
-    <body class="contact">
-     <a href="index.html" >
-      <img src="IMAGES/OratilePeu.jpg" class="profile-picture"      width="100px">
+  <body class="contact">
+    <a href="index.html">
+      <img src="IMAGES/OratilePeu.jpg" class="profile-picture" width="100px">
     </a>
-        <div id="menu">
-            <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="About.html" > About  </a></li>
-     <li><a href="contact.html" > Contact </a></li>
-     <li><a href="projects.html" > Projects</a></li>
 
-        </ul>
-        </div>
-        <h1>GET IN TOUCH!!!</h1>
-<div class="contact-container">
-   <div class="contact-info">
-      <p class="spaced-text"><b>Email</b></p>
-      <a href="mailto:oratilepeu01@gmail.com">oratilepeu01@gmail.com</a>
-      <p class="spaced-text"><b>Phone</b></p>
-      <a  href="tel:+27679563824">+27 67 956 3824</a>
-      <p class="spaced-text"><b>Location</b></p>
-      <p  class="spaced-text">Pretoria</p>
-     <p class="spaced-text"><b>Social</b></p>
-    <a href="https://www.linkedin.com/in/oratile-peu-3b1b15239/">
-     <img src="IMAGES/LinkedInLogo.png" class="linkedIn-logo">
-     
-    </a>
+    <div id="menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="projects.html">Projects</a></li>
+      </ul>
     </div>
-  <div class="contact-split"></div>
 
- <div class="contact-form">
-  <form action="/action_page.php" method="get">
-          <label for="Name"></label>
-          <input type="text" id="fname" name="Name" placeholder="Name"><br><br>
-          <label for="Phone"></label>
-          <input type="text" id="Phone" name="Phone" placeholder="Phone"><br><br>
-          <label for="Email"></label>
-          <input type="text" id="Email" name="Email" placeholder="Email"><br><br>
-          <label   for="Message"></label>
-          <input  type="text" id="Message" name="Message" placeholder="Enter your message"><br><br>
-          <button class="submit-button" type="submit" value="Submit">Submit</button>
-          
-</form>
-</div>
+    <h1>GET IN TOUCH!!!</h1>
 
-</div>
+    <div class="contact-container">
+      <div class="contact-info">
+        <p class="spaced-text"><b>Email</b></p>
+        <a href="mailto:oratilepeu01@gmail.com">oratilepeu01@gmail.com</a>
+        <p class="spaced-text"><b>Phone</b></p>
+        <a href="tel:+27679563824">+27 67 956 3824</a>
+        <p class="spaced-text"><b>Location</b></p>
+        <p class="spaced-text">Pretoria</p>
+        <p class="spaced-text"><b>Social</b></p>
+        <a href="https://www.linkedin.com/in/oratile-peu-3b1b15239/">
+          <img src="IMAGES/LinkedInLogo.png" class="linkedIn-logo">
+        </a>
+      </div>
 
-</body>
+      <div class="contact-split"></div>
+
+      <div class="contact-form">
+        
+        <form id="contact-form">
+          <input type="text" name="user_name"  class="user-name" placeholder="Name" required><br><br>
+          <input type="text" name="user_phone"  class="user-phone" placeholder="Phone"><br><br>
+          <input type="email" name="user_email"  class="user-email" placeholder="Email" required><br><br>
+          <textarea name="message" class= "message" placeholder="Enter your message" required></textarea><br><br>
+          <button class="submit-button" type="submit">Submit</button>
+          <!-- honeypot -->
+          <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" />
+        </form>
+      </div>
+    </div>
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script>
+      // 1) Init with your public key
+      emailjs.init({
+        publicKey: "Cp_-k9gR3NmWmTGhR"
+      });
+
+      // 2) Handle form submission
+      document.getElementById("contact-form").addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        // honeypot check
+        if (e.target.website && e.target.website.value) return;
+
+        const btn = e.target.querySelector("button[type='submit']");
+        btn.disabled = true;
+
+        try {
+          // 3) Send email
+          await emailjs.sendForm(
+            "service_70by1x2", 
+            "template_wd8qt9h",  
+            "#contact-form"
+          );
+
+          alert("Thank You! Your submission has been received. WE will get back to youshortly.");
+          e.target.reset();
+        } catch (err) {
+          console.error("Failed to send:", err);
+          alert(" Sorry, failed to send. Please try again.");
+        } finally {
+          btn.disabled = false;
+        }
+      });
+    </script>
+  </body>
 </html>
-
-
-
