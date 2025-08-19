@@ -200,7 +200,7 @@ color: black;
     align-self: center; /* Ensures it's centered vertically */
 }
 .user-name, .user-email, .user-phone{
-height:25px ;
+height:20px ;
 width: 200px;
 margin-left: -20px;
 }
@@ -327,5 +327,6 @@ body.about{
 background-color: rgb(241, 191, 199);
 overflow-y: hidden;
 }
+
 
 
